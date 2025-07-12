@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎵</text></svg>">
+    <!-- Critical hero image preloading -->
+    <link rel="preload" href="./hero image/hero.svg" as="image" type="image/svg+xml" fetchpriority="high">
+    <link rel="dns-prefetch" href="https://cdn.prod.website-files.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <!-- Critical CSS for immediate hero display -->
+    <style>
+        .hero-image {
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            background-image: url("./hero image/hero.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            opacity: 1;
+            will-change: auto;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            /* Ensure immediate rendering */
+            contain: layout style paint;
+            isolation: isolate;
+        }
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            z-index: 3;
+            position: relative;
+            opacity: 1;
+            transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        }
+        /* Ensure hero image is always visible */
+        .hero-section {
+            height: 150vh;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <div class="hero-image">
+            <div class="hero-content">
+                <img src="./logo/SVG/Asset 1.svg" alt="Logo" class="hero-logo">
+                
+                <!-- Navigation under logo -->
+                <div class="hero-navigation">
+                    <a href="#MUSIC" class="hero-nav-link">MUSIC</a>
+                    <a href="#about" class="hero-nav-link">ABOUT</a>
+                    <a href="#poems" class="hero-nav-link">POEMS</a>
+                    <a href="#contact" class="hero-nav-link">CONTACT</a>
+                </div>
+                
+                <!-- Mobile Hamburger Menu -->
+                <div class="mobile-menu-toggle">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Overlay -->
+                <div class="mobile-menu-overlay">
+                    <div class="mobile-menu-content">
+                        <a href="#MUSIC" class="mobile-nav-link">MUSIC</a>
+                        <a href="#about" class="mobile-nav-link">ABOUT</a>
+                        <a href="#poems" class="mobile-nav-link">POEMS</a>
+                        <a href="#contact" class="mobile-nav-link">CONTACT</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Social wrapper at bottom of hero -->
+            <div data-w-id="4d2ccefc-c237-69f5-132e-7ff0e8b21276" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="social-wrapper">
+                <a data-w-id="0cfc7f17-4350-e652-cdde-c44a7abf6122" href="#" class="link-social w-inline-block">
+                    <img src="https://cdn.prod.website-files.com/65c639f68821fe3493c0df19/65c6677b2229a32dd13d156b_twitter_icon.svg" loading="lazy" alt="" class="img-social">
+                    <div class="nav-hover-div"></div>
+                </a>
+                <a data-w-id="32caa82b-0cd3-14ca-afcf-bda856aeb9bf" href="#" class="link-social w-inline-block">
+                    <img src="https://cdn.prod.website-files.com/65c639f68821fe3493c0df19/65c6679f077d747b90c12fae_instagram_icon.svg" loading="lazy" alt="" class="img-social">
+                    <div class="nav-hover-div"></div>
+                </a>
+                <a data-w-id="49148d1e-ee37-f46b-d1f9-bee380ae4b2b" href="#" class="link-social w-inline-block">
+                    <img src="https://cdn.prod.website-files.com/65c639f68821fe3493c0df19/65c6675044930d0d61b9eba4_facebook_icon.svg" loading="lazy" alt="" class="img-social">
+                    <div class="nav-hover-div"></div>
+                </a>
+                <a data-w-id="fc5e8bce-8c7d-c416-f633-433540a861c6" href="#" class="link-social w-inline-block">
+                    <img src="https://cdn.prod.website-files.com/65c639f68821fe3493c0df19/65c6677fddd641520764af61_spotify_icon.svg" loading="lazy" alt="" class="img-social">
+                    <div class="nav-hover-div"></div>
+                </a>
+                <a data-w-id="e2ed287e-c2be-ad41-143e-ca66ee3cf1d4" href="#" class="link-social w-inline-block">
+                    <img src="https://cdn.prod.website-files.com/65c639f68821fe3493c0df19/65c6677bf9d5255453602b91_itunes_icon.svg" loading="lazy" alt="" class="img-social">
+                    <div class="nav-hover-div"></div>
+                </a>
+                <a data-w-id="ea72aa91-daaf-f5da-65b2-86f1c0eea449" href="#" class="link-social w-inline-block">
+                    <img src="https://cdn.prod.website-files.com/65c639f68821fe3493c0df19/65cc7f2409715875dcc1045e_youtube_icon.svg" loading="lazy" alt="" class="img-social">
+                    <div class="nav-hover-div"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spacer after hero -->
+    <div class="spacer-15vh"></div>
+
+    <div class="content-section">
+        <!-- New Clean Mobile Music Section - MOVED OUTSIDE -->
+        <div class="mobile-music-section">
+            <h2 class="mobile-music-title">MUSIC</h2>
+            <div class="mobile-music-grid">
+                <div class="mobile-music-card">
+                    <a href="https://open.spotify.com/album/5awEnPUdqgYwqsc33hPk52?si=yfVe29S4SW2D4seohRyWgQ" target="_blank">
+                        <img src="https://cdn.prod.website-files.com/62e02f1962b5dd5bf1c2ba38/681dfe84481a90cd0098d8c1_ch-blessings-web.jpg" alt="Blessings Album">
+                    </a>
+                </div>
+                <div class="mobile-music-card">
+                    <a href="https://open.spotify.com/album/5uRY0boZn48gDio0ASlgI0" target="_blank">
+                        <img src="https://cdn.prod.website-files.com/62e02f1962b5dd5bf1c2ba38/66b60ed0fb0e20c09609bb0e_CH-96Months-Front-web.jpg" alt="96 Months Album">
+                    </a>
+                </div>
+                <div class="mobile-music-card">
+                    <a href="https://open.spotify.com/album/3VI38DDpgfFMVPrUi69V5B" target="_blank">
+                        <img src="https://cdn.prod.website-files.com/62e02f1962b5dd5bf1c2ba38/66a23d4f067ebc818bfc2ad9_lovers-past-life.jpg" alt="Lovers Past Life Album">
+                    </a>
+                </div>
+                <div class="mobile-music-card">
+                    <a href="https://open.spotify.com/album/3XDtRvXV5DR1xZfvcneG2C" target="_blank">
+                        <img src="https://cdn.prod.website-files.com/62e02f1962b5dd5bf1c2ba38/64c3c1a626d94eb6dff74bb5_CH-Desire-Art-Master.jpg" alt="Desire Album">
+                    </a>
+                </div>
+                <div class="mobile-music-card">
+                    <a href="https://open.spotify.com/album/22UyygZceCIfoE0RhENgKx?referral=labelaffiliate&utm_source=1011lwCJzWy4&utm_medium=Sony_SonyMusicUK&utm_campaign=labelaffiliate" target="_blank">
+                        <img src="https://cdn.prod.website-files.com/62e02f1962b5dd5bf1c2ba38/640a94156a37cb39fc084686_CH-Miracle-Art-Website.jpg" alt="Miracle Album">
+                    </a>
+                </div>
+                <div class="mobile-music-card">
+                    <a href="https://linkfire.prf.hn/click/camref:1100lpG3g/pubref:Calvin+Harris%3BCalvinHarris.lnk.to%2FFWBV2%3B8f7439d4ab8691a738017bd5554865b2/sportifyurl:http%3A%2F%2Fopen.spotify.com%2Falbum%2F49DV9eFp2xTdtO7veew5xS/destination:http%3A%2F%2Fopen.spotify.com%2Falbum%2F49DV9eFp2xTdtO7veew5xS" target="_blank">
+                        <img src="https://cdn.prod.website-files.com/62e02f1962b5dd5bf1c2ba38/62ed4a4010b38564596c2885_FWB2.png" alt="FWB2 Album">
+                    </a>
+                </div>
+                <div class="mobile-music-card">
+                    <a href="https://linkfire.prf.hn/click/camref:1011lkZcx/pubref:Calvin+Harris%3BCalvinHarris.lnk.to%2FObsessed%3B1f7eaec7dce02aeafb8aba5a57ffcdf4/sportifyurl:http%3A%2F%2Fopen.spotify.com%2Ftrack%2F0b5CzUhyShYuDdtW5J4wm2/destination:http%3A%2F%2Fopen.spotify.com%2Ftrack%2F0b5CzUhyShYuDdtW5J4wm2" target="_blank">
+                        <img src="https://cdn.prod.website-files.com/62e02f1962b5dd5bf1c2ba38/62ed4a4010b38564596c2885_FWB2.png" alt="Obsessed Track">
+                    </a>
+                </div>
+                <div class="mobile-music-card">
+                    <a href="https://linkfire.prf.hn/click/camref:1100lpG3g/pubref:Normani%3BCalvinHarris.lnk.to%2FNewToYou%3B3f234c822caa4415ad546960d3e085d3/sportifyurl:https%3A%2F%2Fopen.spotify.com%2Ftrack%2F22PTmk4mzAVi92WiQPAcFp%3Fsi%3DG1DJsu7oRHONfrETUL8u0g/destination:https%3A%2F%2Fopen.spotify.com%2Ftrack%2F22PTmk4mzAVi92WiQPAcFp%3Fsi%3DG1DJsu7oRHONfrETUL8u0g" target="_blank">
+                        <img src="https://cdn.prod.website-files.com/62e02f1962b5dd5bf1c2ba38/62ed47b2fce10e1b204f0068_new-to-you.jpg" alt="New To You Track">
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="music-section-wrapper">
+            <div id="MUSIC" class="music-container">
+                <div class="div-block-96">
+                    <h2 class="music-title">MUSIC</h2>
+                </div>
+                <div class="card-outer-container w-dyn-list">
+                    <div role="list" class="container w-dyn-items">
+                        <div role="listitem" class="card w-dyn-item" style="translate: none; rotate: none; scale: none; transform: translate(-1.244%, 1.7622%) rotate(-0.650109deg);">
+                            <div class="content" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                                <a href="https://open.spotify.com/album/5awEnPUdqgYwqsc33hPk52?si=yfVe29S4SW2D4seohRyWgQ" target="_blank" class="link-block-38 w-inline-block">
+                                    <img src="https://cdn.prod.website-files.com/62e02f1962b5dd5bf1c2ba38/681dfe84481a90cd0098d8c1_ch-blessings-web.jpg" loading="lazy" alt="" class="image-45">
+                                </a>
+                                <div class="div-block-89">
+                                    <a href="https://open.spotify.com/album/5awEnPUdqgYwqsc33hPk52?si=yfVe29S4SW2D4seohRyWgQ" class="new-nav-link big music">listen <strong>→</strong></a>
+                                    <div class="new-nav-link date">2025</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="listitem" class="card w-dyn-item" style="translate: none; rotate: none; scale: none; transform: translate(3.0589%, -1.3484%) rotate(2.06635deg);">
+                            <div class="content" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                                <a href="https://open.spotify.com/album/5uRY0boZn48gDio0ASlgI0" target="_blank" class="link-block-38 w-inline-block">
+                                    <img src="https://cdn.prod.website-files.com/62e02f1962b5dd5bf1c2ba38/66b60ed0fb0e20c09609bb0e_CH-96Months-Front-web.jpg" loading="lazy" alt="" class="image-45">
+                                </a>
+                                <div class="div-block-89">
+                                    <a href="https://open.spotify.com/album/5uRY0boZn48gDio0ASlgI0" class="new-nav-link big music">listen <strong>→</strong></a>
+                                    <div class="new-nav-link date">2024</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="listitem" class="card w-dyn-item" style="translate: none; rotate: none; scale: none; transform: translate(3.9454%, -0.7539%) rotate(-6.5853deg);">
+                            <div class="content" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                                <a href="https://open.spotify.com/album/3VI38DDpgfFMVPrUi69V5B" target="_blank" class="link-block-38 w-inline-block">
+                                    <img src="https://cdn.prod.website-files.com/62e02f1962b5dd5bf1c2ba38/66a23d4f067ebc818bfc2ad9_lovers-past-life.jpg" loading="lazy" alt="" class="image-45">
+                                </a>
+                                <div class="div-block-89">
+                                    <a href="https://open.spotify.com/album/3VI38DDpgfFMVPrUi69V5B" class="new-nav-link big music">listen <strong>→</strong></a>
+                                    <div class="new-nav-link date">2024</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="listitem" class="card w-dyn-item" style="translate: none; rotate: none; scale: none; transform: translate(-3.1916%, 1.9677%) rotate(-2.2461deg);">
+                            <div class="content" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                                <a href="https://open.spotify.com/album/3XDtRvXV5DR1xZfvcneG2C" target="_blank" class="link-block-38 w-inline-block">
+                                    <img src="https://cdn.prod.website-files.com/62e02f1962b5dd5bf1c2ba38/64c3c1a626d94eb6dff74bb5_CH-Desire-Art-Master.jpg" loading="lazy" alt="" class="image-45">
+                                </a>
+                                <div class="div-block-89">
+                                    <a href="https://open.spotify.com/album/3XDtRvXV5DR1xZfvcneG2C" class="new-nav-link big music">listen <strong>→</strong></a>
+                                    <div class="new-nav-link date">2023</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="listitem" class="card w-dyn-item" style="translate: none; rotate: none; scale: none; transform: translate(3.6133%, 1.8704%) rotate(-3.48378deg);">
+                            <div class="content" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                                <a href="https://open.spotify.com/album/22UyygZceCIfoE0RhENgKx?referral=labelaffiliate&utm_source=1011lwCJzWy4&utm_medium=Sony_SonyMusicUK&utm_campaign=labelaffiliate" target="_blank" class="link-block-38 w-inline-block">
+                                    <img src="https://cdn.prod.website-files.com/62e02f1962b5dd5bf1c2ba38/640a94156a37cb39fc084686_CH-Miracle-Art-Website.jpg" loading="lazy" alt="" class="image-45">
+                                </a>
+                                <div class="div-block-89">
+                                    <a href="https://open.spotify.com/album/22UyygZceCIfoE0RhENgKx?referral=labelaffiliate&utm_source=1011lwCJzWy4&utm_medium=Sony_SonyMusicUK&utm_campaign=labelaffiliate" class="new-nav-link big music">listen <strong>→</strong></a>
+                                    <div class="new-nav-link date">2023</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="listitem" class="card w-dyn-item" style="translate: none; rotate: none; scale: none; transform: translate(-2.6412%, -3.9468%) rotate(-6.68936deg);">
+                            <div class="content" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                                <a href="https://linkfire.prf.hn/click/camref:1100lpG3g/pubref:Calvin+Harris%3BCalvinHarris.lnk.to%2FFWBV2%3B8f7439d4ab8691a738017bd5554865b2/sportifyurl:http%3A%2F%2Fopen.spotify.com%2Falbum%2F49DV9eFp2xTdtO7veew5xS/destination:http%3A%2F%2Fopen.spotify.com%2Falbum%2F49DV9eFp2xTdtO7veew5xS" target="_blank" class="link-block-38 w-inline-block">
+                                    <img src="https://cdn.prod.website-files.com/62e02f1962b5dd5bf1c2ba38/62ed4a4010b38564596c2885_FWB2.png" loading="lazy" alt="" class="image-45">
+                                </a>
+                                <div class="div-block-89">
+                                    <a href="https://linkfire.prf.hn/click/camref:1100lpG3g/pubref:Calvin+Harris%3BCalvinHarris.lnk.to%2FFWBV2%3B8f7439d4ab8691a738017bd5554865b2/sportifyurl:http%3A%2F%2Fopen.spotify.com%2Falbum%2F49DV9eFp2xTdtO7veew5xS/destination:http%3A%2F%2Fopen.spotify.com%2Falbum%2F49DV9eFp2xTdtO7veew5xS" class="new-nav-link big music">listen <strong>→</strong></a>
+                                    <div class="new-nav-link date">2022</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="listitem" class="card w-dyn-item" style="translate: none; rotate: none; scale: none; transform: translate(2.3799%, -2.7872%) rotate(5.262deg);">
+                            <div class="content" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                                <a href="https://linkfire.prf.hn/click/camref:1011lkZcx/pubref:Calvin+Harris%3BCalvinHarris.lnk.to%2FObsessed%3B1f7eaec7dce02aeafb8aba5a57ffcdf4/sportifyurl:http%3A%2F%2Fopen.spotify.com%2Ftrack%2F0b5CzUhyShYuDdtW5J4wm2/destination:http%3A%2F%2Fopen.spotify.com%2Ftrack%2F0b5CzUhyShYuDdtW5J4wm2" target="_blank" class="link-block-38 w-inline-block">
+                                    <img src="https://cdn.prod.website-files.com/62e02f1962b5dd5bf1c2ba38/62ed4a4010b38564596c2885_FWB2.png" loading="lazy" alt="" class="image-45">
+                                </a>
+                                <div class="div-block-89">
+                                    <a href="https://linkfire.prf.hn/click/camref:1011lkZcx/pubref:Calvin+Harris%3BCalvinHarris.lnk.to%2FObsessed%3B1f7eaec7dce02aeafb8aba5a57ffcdf4/sportifyurl:http%3A%2F%2Fopen.spotify.com%2Ftrack%2F0b5CzUhyShYuDdtW5J4wm2/destination:http%3A%2F%2Fopen.spotify.com%2Ftrack%2F0b5CzUhyShYuDdtW5J4wm2" class="new-nav-link big music">listen <strong>→</strong></a>
+                                    <div class="new-nav-link date">2022</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="listitem" class="card w-dyn-item" style="translate: none; rotate: none; scale: none; transform: translate(1.8457%, 0.3532%) rotate(-7.33604deg);">
+                            <div class="content" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                                <a href="https://linkfire.prf.hn/click/camref:1100lpG3g/pubref:Normani%3BCalvinHarris.lnk.to%2FNewToYou%3B3f234c822caa4415ad546960d3e085d3/sportifyurl:https%3A%2F%2Fopen.spotify.com%2Ftrack%2F22PTmk4mzAVi92WiQPAcFp%3Fsi%3DG1DJsu7oRHONfrETUL8u0g/destination:https%3A%2F%2Fopen.spotify.com%2Ftrack%2F22PTmk4mzAVi92WiQPAcFp%3Fsi%3DG1DJsu7oRHONfrETUL8u0g" target="_blank" class="link-block-38 w-inline-block">
+                                    <img src="https://cdn.prod.website-files.com/62e02f1962b5dd5bf1c2ba38/62ed47b2fce10e1b204f0068_new-to-you.jpg" loading="lazy" alt="" class="image-45">
+                                </a>
+                                <div class="div-block-89">
+                                    <a href="https://linkfire.prf.hn/click/camref:1100lpG3g/pubref:Normani%3BCalvinHarris.lnk.to%2FNewToYou%3B3f234c822caa4415ad546960d3e085d3/sportifyurl:https%3A%2F%2Fopen.spotify.com%2Ftrack%2F22PTmk4mzAVi92WiQPAcFp%3Fsi%3DG1DJsu7oRHONfrETUL8u0g/destination:https%3A%2F%2Fopen.spotify.com%2Ftrack%2F22PTmk4mzAVi92WiQPAcFp%3Fsi%3DG1DJsu7oRHONfrETUL8u0g" class="new-nav-link big music">listen <strong>→</strong></a>
+                                    <div class="new-nav-link date">2022</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spacer after music cards -->
+    <div class="spacer-15vh"></div>
+
+    <div class="about-section" id="about">
+        <div class="about_component">
+            <div class="about_column _1">
+                <div class="margin-bottom margin-xxlarge is-tablet-zero">
+                    <div class="about_person-image-wrapper">
+                        <img src="about section/IMG_2034.png" loading="lazy" alt="Tal Mekler portrait" class="about_person-image">
+                    </div>
+                </div>
+
+            </div>
+            <div class="about_column _2">
+                <div class="margin-bottom margin-large">
+                    <h2 class="heading-medium">Tal Mekler</h2>
+                </div>
+                <div class="about-text-content">
+                    <div class="about-paragraph">
+                        <p>is a soulful singer-songwriter whose music draws from the worlds of soul, blues, and R&B.</p>
+                    </div>
+                    <div class="about-paragraph">
+                        <p>Her songs are born from her open heart, sensetive truth and a mindful openness— to herself, to those around her, and most of all, to the heart. She creates from a space of empathy, receptivity, and emotional presence, believing in the power of a song to reflect, connect, and heal.</p>
+                    </div>
+                    <div class="about-paragraph">
+                        <p>In recent years, Tal has been active not only in music but also in the realms of personal and spiritual growth also as a yoga instructor in Srilanka— a journey that continues to deepen her connection to herself and to what she chooses to bring to the forefront of her art. Her songs explore pain, tenderness, independence, self-love and love for others, and the courage to walk the path — even when it isn't fully clear.</p>
+                    </div>
+                </div>
+
+                <div class="about_column-image-wrapper">
+                    <img src="about section/IMG_2038.png" loading="lazy" alt="Tal Mekler performing" class="about_column-image">
+                </div>
+            </div>
+            <div class="about_column _3">
+                <div class="about-column-3-content">
+                    <div class="about_column-image-wrapper">
+                        <img src="about section/IMG_2047.png" loading="lazy" alt="Tal Mekler artistic shot" class="about_column-image">
+                    </div>
+                    <div class="about-text-content">
+                        <div class="about-paragraph">
+                            <p>An independent and powerful artist, Tal Mekler brings to the stage a clear feminine voice — strong, personal, and rooted — with a free and untamed soul. She performs in intimate settings, is involved in new creative projects (a single and an album are on the way), and invites those who listen to simply be — and feel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spacer between about and poems -->
+    <div class="spacer-30vh"></div>
+
+    <div class="poems-section" id="poems">
+        <div class="poems-header">
+            <h2 class="poems-title">POEMS</h2>
+        </div>
+        <div class="sticky-cards-container">
+            <div class="sticky-card">
+                <div class="card-content">
+                    <img src="poems/poem 1.png" alt="Poem 1" class="poem-image">
+                </div>
+            </div>
+            <div class="sticky-card">
+                <div class="card-content">
+                    <img src="poems/poem 2.png" alt="Poem 2" class="poem-image">
+                </div>
+            </div>
+            <div class="sticky-card">
+                <div class="card-content">
+                    <img src="poems/poem 3.png" alt="Poem 3" class="poem-image">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Spacer after poems -->
+    <div class="spacer-30vh"></div>
+    
+    <div class="contact-section" id="contact">
+        <div class="contact-content">
+            <h2 class="contact-title">CONTACT</h2>
+            <div class="contact-info">
+                <p class="contact-text">Get in touch for collaborations, bookings, or just to say hello.</p>
+                <a href="mailto:hello@example.com" class="contact-link">hello@example.com</a>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <script>
+        // Preload hero image immediately
+        const heroImage = new Image();
+        heroImage.src = './hero image/hero.svg';
+        heroImage.onload = function() {
+            // Hero image loaded successfully
+            console.log('Hero image loaded successfully');
+        };
+        heroImage.onerror = function() {
+            // Fallback if hero image fails to load
+            console.warn('Hero image failed to load, using fallback');
+            const heroElement = document.querySelector('.hero-image');
+            if (heroElement) {
+                heroElement.style.backgroundImage = 'linear-gradient(45deg, #f5f3f0, #e8e4e0)';
+            }
+        };
+        
+        // Initialize page when loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Hero scroll fade effect
+            const heroContent = document.querySelector('.hero-content');
+            const heroImage = document.querySelector('.hero-image');
+            
+            // Mobile menu functionality
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            
+            if (mobileMenuToggle && mobileMenuOverlay) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mobileMenuToggle.classList.toggle('active');
+                    mobileMenuOverlay.classList.toggle('active');
+                });
+                
+                // Close menu when clicking on a link
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenuToggle.classList.remove('active');
+                        mobileMenuOverlay.classList.remove('active');
+                    });
+                });
+                
+                // Close menu when clicking outside
+                mobileMenuOverlay.addEventListener('click', function(e) {
+                    if (e.target === mobileMenuOverlay) {
+                        mobileMenuToggle.classList.remove('active');
+                        mobileMenuOverlay.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Sticky cards are handled by CSS only - no JavaScript needed
+            
+            // Set initial state - no fade on page load
+            if (heroContent) {
+                heroContent.style.opacity = '1';
+                heroContent.style.transform = 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)';
+            }
+            
+            if (heroImage) {
+                heroImage.style.opacity = '1';
+            }
+            
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const windowHeight = window.innerHeight;
+                
+                // Hero fade effect only on scroll
+                const maxScroll = windowHeight * 1.0;
+                const fadeProgress = Math.min(scrollTop / maxScroll, 1);
+                const opacity = 1 - fadeProgress;
+                const translateY = scrollTop * 0.4;
+                
+                if (heroContent) {
+                    heroContent.style.opacity = opacity;
+                    heroContent.style.transform = `translate3d(0px, ${translateY}px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`;
+                }
+                
+                if (heroImage) {
+                    heroImage.style.opacity = opacity;
+                }
+            });
+        });
+    </script>
+    
+
+</body>
+</html> 
+</html> 
