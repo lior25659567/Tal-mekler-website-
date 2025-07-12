@@ -1313,6 +1313,37 @@ body {
         letter-spacing: 0.05em;
     }
     
+    /* Make poem images bigger on mobile */
+    .sticky-cards-container {
+        padding: 0 1rem;
+    }
+    
+    .sticky-card {
+        margin-bottom: 3rem;
+        width: 100%;
+    }
+    
+    .card-content {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .poem-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 0;
+        box-shadow: none;
+        transition: transform 0.3s ease;
+        margin: 0;
+        display: block;
+    }
+    
+    .poem-image:hover {
+        transform: scale(1.02);
+    }
+    
 
     
     .video-slide {
