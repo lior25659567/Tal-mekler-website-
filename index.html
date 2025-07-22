@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tillana:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎵</text></svg>">
     <!-- Critical hero image preloading -->
     <link rel="preload" href="./hero image/hero.svg" as="image" type="image/svg+xml" fetchpriority="high">
@@ -165,6 +166,35 @@
                         <img src="https://cdn.prod.website-files.com/62e02f1962b5dd5bf1c2ba38/62ed47b2fce10e1b204f0068_new-to-you.jpg" alt="New To You Track">
                     </a>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Mobile About Section -->
+        <div class="mobile-about-section">
+            <h2 class="mobile-about-title">ABOUT</h2>
+            <div class="mobile-about-carousel">
+                <div class="mobile-carousel-container">
+                    <div class="mobile-carousel-slide active">
+                        <img src="about section/IMG_2034.png" loading="lazy" alt="Tal Mekler portrait" class="mobile-carousel-image">
+                    </div>
+                    <div class="mobile-carousel-slide">
+                        <img src="about section/IMG_2038.png" loading="lazy" alt="Tal Mekler performing" class="mobile-carousel-image">
+                    </div>
+                    <div class="mobile-carousel-slide">
+                        <img src="about section/IMG_2047.png" loading="lazy" alt="Tal Mekler artistic shot" class="mobile-carousel-image">
+                    </div>
+                </div>
+                <div class="mobile-carousel-dots">
+                    <span class="mobile-dot active" data-slide="0"></span>
+                    <span class="mobile-dot" data-slide="1"></span>
+                    <span class="mobile-dot" data-slide="2"></span>
+                </div>
+            </div>
+            <div class="mobile-about-text">
+                <h3 class="mobile-about-subtitle">SINGER</h3>
+                <p>Through soulful melodies, heartfelt lyrics, and mindful presence, I create music that invites reflection on love, healing, and personal growth. I use songwriting as a tool to explore emotions, celebrate vulnerability, and promote self-discovery.</p>
+                <p>My songs are born from my open heart, sensitive truth and a mindful openness— to myself, to those around me, and most of all, to the heart. I create from a space of empathy, receptivity, and emotional presence, believing in the power of a song to reflect, connect, and heal.</p>
+                <h3 class="mobile-about-subtitle">SONGWRITER</h3>
             </div>
         </div>
         
@@ -418,6 +448,33 @@
                 const nextSlide = (currentSlide + 1) % carouselSlides.length;
                 showSlide(nextSlide);
             }, 3000); // Changed to 3 seconds for faster transitions
+            
+            // Mobile About Carousel functionality
+            const mobileCarouselSlides = document.querySelectorAll('.mobile-carousel-slide');
+            const mobileDots = document.querySelectorAll('.mobile-dot');
+            let mobileCurrentSlide = 0;
+            
+            function showMobileSlide(index) {
+                mobileCarouselSlides.forEach(slide => slide.classList.remove('active'));
+                mobileDots.forEach(dot => dot.classList.remove('active'));
+                
+                mobileCarouselSlides[index].classList.add('active');
+                mobileDots[index].classList.add('active');
+                mobileCurrentSlide = index;
+            }
+            
+            // Mobile dot click handlers
+            mobileDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showMobileSlide(index);
+                });
+            });
+            
+            // Auto-advance mobile carousel
+            setInterval(() => {
+                const nextSlide = (mobileCurrentSlide + 1) % mobileCarouselSlides.length;
+                showMobileSlide(nextSlide);
+            }, 3000);
             
             // Hero scroll fade effect
             const heroContent = document.querySelector('.hero-content');

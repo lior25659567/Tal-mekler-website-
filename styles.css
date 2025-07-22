@@ -515,6 +515,116 @@ body {
     z-index: 10;
 }
 
+/* Mobile About Section */
+.mobile-about-section {
+    display: none; /* Hidden on desktop by default */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    align-self: stretch;
+    width: 34.5625rem;
+    height: 22.375rem;
+    position: relative;
+    margin: 0 auto;
+    background: #f5f3f0;
+    padding: 2rem 1rem;
+}
+
+.mobile-about-title {
+    width: 35.5rem;
+    height: 2.4375rem;
+    font-family: 'Corben', serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    color: #FF3B00;
+    text-align: center;
+    margin: 0;
+}
+
+.mobile-about-carousel {
+    width: 35.5rem;
+    height: 4.5rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.mobile-carousel-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.mobile-carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.mobile-carousel-slide.active {
+    display: block;
+}
+
+.mobile-carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.mobile-carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.mobile-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.mobile-dot.active {
+    background: #fff;
+}
+
+.mobile-about-text {
+    width: 35.5rem;
+    font-family: 'Tillana', serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0%;
+    color: #1a1a1a;
+}
+
+.mobile-about-subtitle {
+    font-family: 'Tillana', serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.mobile-about-text p {
+    margin: 0 0 1rem 0;
+    text-align: left;
+}
+
 .mobile-music-title {
     width: 21.75rem;
     color: #FF3B00;
@@ -1553,6 +1663,16 @@ body {
         background: #f5f3f0;
         position: relative;
         margin: 0 auto;
+    }
+    
+    /* Show mobile about section */
+    .mobile-about-section {
+        display: flex !important;
+    }
+    
+    /* Hide desktop about section on mobile */
+    .about-section {
+        display: none !important;
     }
     
     .mobile-music-title {
