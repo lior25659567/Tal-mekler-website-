@@ -1383,63 +1383,73 @@ body {
 /* Contact Section */
 .contact-section {
     background: #f5f3f0;
-    padding: 8rem 2rem;
+    padding: 6rem 2rem;
     text-align: center;
     color: #1a1a1a;
 }
 
 .contact-content {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
 .contact-title {
-    font-size: 3rem;
-    font-weight: 500;
+    font-size: 2.5rem;
+    font-weight: 400;
     color: #1a1a1a;
     text-align: center;
-    margin: 0 0 3rem 0;
+    margin: 0 0 4rem 0;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.15em;
     font-family: 'Times New Roman', Times, serif;
 }
 
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     align-items: center;
 }
 
-.contact-text {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: rgba(26, 26, 26, 0.7);
-    margin: 0;
-    max-width: 600px;
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.contact-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(26, 26, 26, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     font-family: 'Times New Roman', Times, serif;
-    font-weight: 400;
+    margin-bottom: 0.5rem;
 }
 
 .contact-link {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 400;
     color: #1a1a1a;
     text-decoration: none;
     transition: all 0.3s ease;
-    padding: 1rem 2rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 0;
-    background: #fff;
-    border: 1px solid #e8e4e0;
+    background: transparent;
+    border: 1px solid rgba(26, 26, 26, 0.2);
     display: inline-block;
     font-family: 'Times New Roman', Times, serif;
     letter-spacing: 0.05em;
+    min-width: 200px;
 }
 
 .contact-link:hover {
     color: #000;
-    background: #f8f8f8;
-    border-color: #d4d0cc;
+    background: rgba(26, 26, 26, 0.05);
+    border-color: rgba(26, 26, 26, 0.4);
     transform: translateY(-1px);
 }
 
@@ -1684,17 +1694,26 @@ body {
     }
     
     .contact-title {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
+        font-size: 2rem;
+        margin-bottom: 3rem;
     }
     
-    .contact-text {
-        font-size: 1.1rem;
+    .contact-info {
+        gap: 2rem;
+    }
+    
+    .contact-item {
+        max-width: 300px;
+    }
+    
+    .contact-label {
+        font-size: 0.8rem;
     }
     
     .contact-link {
-        font-size: 1.4rem;
-        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+        padding: 0.7rem 1.2rem;
+        min-width: 180px;
     }
 }
 
