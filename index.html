@@ -122,7 +122,7 @@
     </div>
 
     <!-- Spacer after hero -->
-    <div class="spacer-15vh"></div>
+    <div class="spacer-50vh"></div>
 
     <div class="content-section">
         <!-- New Clean Mobile Music Section - MOVED OUTSIDE -->
@@ -464,25 +464,11 @@
                 
                 // Only apply fade effect on desktop
                 if (window.innerWidth > 768) {
-                    // Hero fade effect with smaller scroll range
-                    const maxScroll = windowHeight * 0.5; // Reduced from 1.0 to 0.5
+                    // Hero fade effect with very small scroll range
+                    const maxScroll = windowHeight * 0.2; // Very small scroll range
                     const fadeProgress = Math.min(scrollTop / maxScroll, 1);
                     const opacity = 1 - fadeProgress;
-                    const translateY = scrollTop * 0.2; // Reduced from 0.4 to 0.2
+                    const translateY = scrollTop * 0.1; // Minimal movement
                     
                     if (heroContent) {
-                        heroContent.style.opacity = opacity;
-                        heroContent.style.transform = `translate3d(0px, ${translateY}px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`;
-                    }
-                    
-                    if (heroImage) {
-                        heroImage.style.opacity = opacity;
-                    }
-                }
-            });
-        });
-    </script>
-    
-
-</body>
-</html> 
+                        heroContent.sty
