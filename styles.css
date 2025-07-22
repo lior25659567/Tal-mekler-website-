@@ -1057,6 +1057,17 @@ body {
     width: 100%;
 }
 
+/* Mobile: Reduce gaps between sections */
+@media (max-width: 768px) {
+    .spacer-15vh {
+        height: 5vh;
+    }
+    
+    .spacer-30vh {
+        height: 10vh;
+    }
+}
+
 /* Text content */
 .about_column div {
     line-height: 1.6;
