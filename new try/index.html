@@ -94,35 +94,35 @@
         </div>
     </nav>
 
+    <!-- Mobile Hamburger Menu - Moved outside hero section -->
+    <div class="mobile-menu-toggle">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <a href="#MUSIC" class="mobile-nav-link">MUSIC</a>
+            <a href="#about" class="mobile-nav-link">ABOUT</a>
+            <a href="#poems" class="mobile-nav-link">POEMS</a>
+            <a href="#contact" class="mobile-nav-link">CONTACT</a>
+        </div>
+    </div>
+
     <div class="hero-section" id="home">
         <div class="hero-image">
             <div class="hero-content">
                 <img src="./Logo/SVG/Asset 1.svg" alt="Logo" class="hero-logo">
-                
-                <!-- Mobile Hamburger Menu -->
-                <div class="mobile-menu-toggle">
-                    <div class="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                
-                <!-- Mobile Menu Overlay -->
-                <div class="mobile-menu-overlay">
-                    <div class="mobile-menu-content">
-                        <a href="#MUSIC" class="mobile-nav-link">MUSIC</a>
-                        <a href="#about" class="mobile-nav-link">ABOUT</a>
-                        <a href="#poems" class="mobile-nav-link">POEMS</a>
-                        <a href="#contact" class="mobile-nav-link">CONTACT</a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 
     <!-- Spacer after hero -->
-    <div class="spacer-15vh"></div>
+    <div class="spacer-50vh"></div>
 
     <div class="content-section">
         <!-- New Clean Mobile Music Section - MOVED OUTSIDE -->
@@ -470,4 +470,19 @@
                     const opacity = 1 - fadeProgress;
                     const translateY = scrollTop * 0.1; // Minimal movement
                     
-                   
+                    if (heroContent) {
+                        heroContent.style.opacity = opacity;
+                        heroContent.style.transform = `translate3d(0px, ${translateY}px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`;
+                    }
+                    
+                    if (heroImage) {
+                        heroImage.style.opacity = opacity;
+                    }
+                }
+            });
+        });
+    </script>
+    
+
+</body>
+</html> 
