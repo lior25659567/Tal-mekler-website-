@@ -14,10 +14,109 @@ body {
     color: #1a1a1a;
 }
 
+/* Sticky Navigation Bar */
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(245, 243, 240, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+}
 
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+.nav-left {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
 
+.nav-link {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
 
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #1a1a1a;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-center {
+    flex: 1;
+    text-align: center;
+}
+
+.artist-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.nav-right {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: transparent;
+    transition: all 0.3s ease;
+    padding: 6px;
+}
+
+.social-icon:hover {
+    background: rgba(26, 26, 26, 0.1);
+    transform: translateY(-2px);
+}
+
+.social-icon img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover img {
+    transform: scale(1.1);
+}
 
 
 /* Hero Section - 150vh allows scrolling space */
@@ -1167,6 +1266,11 @@ body {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    /* Hide sticky nav on mobile, show mobile menu instead */
+    .sticky-nav {
+        display: none;
+    }
+    
     .hero-logo {
         width: 350px;
         max-width: 90vw;
