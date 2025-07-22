@@ -14,16 +14,156 @@ body {
     color: #1a1a1a;
 }
 
+/* Sticky Navigation Bar */
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    backdrop-filter: none;
+    z-index: 1000;
+    padding: 1rem 2rem;
+    border-bottom: none;
+    transition: all 0.3s ease;
+}
 
+.sticky-nav.scrolled {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+.nav-left {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
 
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.sticky-nav.scrolled .nav-link {
+    color: #fff;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s ease;
+}
+
+.sticky-nav.scrolled .nav-link::after {
+    background: #fff;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-center {
+    flex: 1;
+    text-align: center;
+}
+
+.artist-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    transition: all 0.3s ease;
+}
+
+.sticky-nav.scrolled .artist-name {
+    color: #fff;
+}
+
+.nav-right {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: transparent;
+    transition: all 0.3s ease;
+    padding: 6px;
+}
+
+.social-icon:hover {
+    background: rgba(26, 26, 26, 0.1);
+    transform: translateY(-2px);
+}
+
+.social-icon img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    transition: all 0.3s ease;
+}
+
+.sticky-nav.scrolled .social-icon img {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.social-icon:hover img {
+    transform: scale(1.1);
+}
 
 
 /* Hero Section - 150vh allows scrolling space */
 .hero-section {
     height: 150vh;
     position: relative;
+}
+
+/* Mobile: Reduce hero section height */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 100vh;
+    }
+    
+    /* Disable fade effect on mobile to make it more compact */
+    .hero-content {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    .hero-image {
+        opacity: 1 !important;
+    }
 }
 
 /* Hero Image - sticky positioning keeps it in place */
@@ -45,6 +185,13 @@ body {
     will-change: auto;
     transform: translateZ(0);
     backface-visibility: hidden;
+}
+
+/* Mobile: Make hero image smaller */
+@media (max-width: 768px) {
+    .hero-image {
+        height: 80vh;
+    }
 }
 
 .hero-image::before {
@@ -699,49 +846,151 @@ body {
     letter-spacing: 0.05em;
 }
 
-/* About Section */
+/* About Section - New Layout */
 .about-section {
+    position: relative;
     background: #f5f3f0;
-    padding: 6rem 2rem;
-    color: #1a1a1a;
+    overflow: hidden;
 }
 
-.about_component {
+/* Image Carousel Section */
+.about-carousel {
+    height: 60vh;
     position: relative;
-    z-index: 1;
-    display: -ms-grid;
-    display: grid;
-    -webkit-box-align: start;
-    -webkit-align-items: start;
-    -ms-flex-align: start;
-    align-items: start;
-    grid-auto-columns: 1fr;
-    grid-column-gap: 2rem;
-    grid-row-gap: 1rem;
-    -ms-grid-columns: 0.75fr 1fr 1fr;
-    grid-template-columns: 0.75fr 1fr 1fr;
-    -ms-grid-rows: auto;
-    grid-template-rows: auto;
-    max-width: 1200px;
+    background: #f5f3f0;
+    overflow: hidden;
+}
+
+.carousel-container {
+    height: 100%;
+    position: relative;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #fff;
+    transform: scale(1.2);
+}
+
+/* About Text Section */
+.about-text-section {
+    background: #f5f3f0;
+    color: #1a1a1a;
+    padding: 4rem 2rem;
+}
+
+.about-text-container {
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.about_column {
+.about-headline {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0 0 3rem 0;
+    line-height: 1.2;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.about-content {
+    max-width: 600px;
+}
+
+.about-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 2rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.about-paragraphs {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    gap: 1.5rem;
 }
 
-.about_column._1 {
-    justify-content: space-between;
+.about-paragraphs p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
 }
 
-.about_column._2 {
-    justify-content: flex-start;
-}
-
-.about_column._3 {
-    justify-content: space-between;
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .about-carousel {
+        height: 50vh;
+    }
+    
+    .about-headline {
+        font-size: 2rem;
+        margin: 0 0 2rem 0;
+    }
+    
+    .about-subtitle {
+        font-size: 1.3rem;
+        margin: 0 0 1.5rem 0;
+    }
+    
+    .about-paragraphs p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .about-text-section {
+        padding: 3rem 1.5rem;
+    }
 }
 
 /* Margin utilities */
@@ -932,6 +1181,17 @@ body {
 .spacer-30vh {
     height: 30vh;
     width: 100%;
+}
+
+/* Mobile: Reduce gaps between sections */
+@media (max-width: 768px) {
+    .spacer-15vh {
+        height: 0.5vh;
+    }
+    
+    .spacer-30vh {
+        height: 2vh;
+    }
 }
 
 /* Text content */
@@ -1167,6 +1427,11 @@ body {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    /* Hide sticky nav on mobile, show mobile menu instead */
+    .sticky-nav {
+        display: none;
+    }
+    
     .hero-logo {
         width: 350px;
         max-width: 90vw;
@@ -1234,6 +1499,11 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 0.8rem;
         padding: 0 0.5rem;
+    }
+    
+    /* Show only first 4 music cards on mobile */
+    .mobile-music-card:nth-child(n+5) {
+        display: none;
     }
     
     .mobile-music-card {
@@ -1315,36 +1585,42 @@ body {
     
     /* Make poem images much bigger on mobile */
     .sticky-cards-container {
-        padding: 0 0.5rem;
+        padding: 0;
         margin: 0;
+        height: 300vh; /* 3 poems * 100vh each */
+        position: relative;
     }
     
     .sticky-card {
-        margin-bottom: 4rem;
+        height: 100vh;
         width: 100vw;
-        max-width: 100vw;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
+        position: sticky;
+        top: 0;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .card-content {
         width: 100%;
+        height: 100%;
         padding: 0;
         margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .poem-image {
         width: 100vw;
-        max-width: 100vw;
-        height: auto;
+        height: 100vh;
         object-fit: contain;
         border-radius: 0;
         box-shadow: none;
         transition: transform 0.3s ease;
         margin: 0;
         display: block;
-        min-height: 80vh;
     }
     
     .poem-image:hover {

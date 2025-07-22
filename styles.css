@@ -143,13 +143,13 @@ body {
 }
 
 
-/* Hero Section - 150vh allows scrolling space */
+/* Hero Section - Reduced height for better spacing */
 .hero-section {
-    height: 150vh;
+    height: 100vh;
     position: relative;
 }
 
-/* Mobile: Reduce hero section height */
+/* Mobile: Keep compact height */
 @media (max-width: 768px) {
     .hero-section {
         height: 100vh;

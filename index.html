@@ -296,9 +296,8 @@
         <!-- About Text Section -->
         <div class="about-text-section">
             <div class="about-text-container">
-                <h2 class="about-headline">ISRAELI SINGER-SONGWRITER BASED IN TEL AVIV</h2>
+                <h2 class="about-headline">ISRAELI SINGER-SONGWRITER</h2>
                 <div class="about-content">
-                    <h3 class="about-subtitle">About me</h3>
                     <div class="about-paragraphs">
                         <p>Through soulful melodies, heartfelt lyrics, and mindful presence, I create music that invites reflection on love, healing, and personal growth. I use songwriting as a tool to explore emotions, celebrate vulnerability, and promote self-discovery.</p>
                         <p>My songs are born from my open heart, sensitive truth and a mindful openness— to myself, to those around me, and most of all, to the heart. I create from a space of empathy, receptivity, and emotional presence, believing in the power of a song to reflect, connect, and heal.</p>
@@ -465,11 +464,11 @@
                 
                 // Only apply fade effect on desktop
                 if (window.innerWidth > 768) {
-                    // Hero fade effect only on scroll
-                    const maxScroll = windowHeight * 1.0;
+                    // Hero fade effect with smaller scroll range
+                    const maxScroll = windowHeight * 0.5; // Reduced from 1.0 to 0.5
                     const fadeProgress = Math.min(scrollTop / maxScroll, 1);
                     const opacity = 1 - fadeProgress;
-                    const translateY = scrollTop * 0.4;
+                    const translateY = scrollTop * 0.2; // Reduced from 0.4 to 0.2
                     
                     if (heroContent) {
                         heroContent.style.opacity = opacity;
