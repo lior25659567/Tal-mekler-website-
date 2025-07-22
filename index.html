@@ -409,6 +409,24 @@
         // Initialize page when loaded
         document.addEventListener('DOMContentLoaded', function() {
             
+            // Navigation scroll effect
+            const stickyNav = document.querySelector('.sticky-nav');
+            const heroSection = document.querySelector('.hero-section');
+            
+            function updateNavigation() {
+                if (window.pageYOffset > 100) {
+                    stickyNav.classList.add('scrolled');
+                } else {
+                    stickyNav.classList.remove('scrolled');
+                }
+            }
+            
+            // Update navigation on scroll
+            window.addEventListener('scroll', updateNavigation);
+            
+            // Initial check
+            updateNavigation();
+            
             // Hero scroll fade effect
             const heroContent = document.querySelector('.hero-content');
             const heroImage = document.querySelector('.hero-image');
@@ -425,56 +443,4 @@
                 });
                 
                 // Close menu when clicking on a link
-                mobileNavLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        mobileMenuToggle.classList.remove('active');
-                        mobileMenuOverlay.classList.remove('active');
-                    });
-                });
-                
-                // Close menu when clicking outside
-                mobileMenuOverlay.addEventListener('click', function(e) {
-                    if (e.target === mobileMenuOverlay) {
-                        mobileMenuToggle.classList.remove('active');
-                        mobileMenuOverlay.classList.remove('active');
-                    }
-                });
-            }
-            
-            // Sticky cards are handled by CSS only - no JavaScript needed
-            
-            // Set initial state - no fade on page load
-            if (heroContent) {
-                heroContent.style.opacity = '1';
-                heroContent.style.transform = 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)';
-            }
-            
-            if (heroImage) {
-                heroImage.style.opacity = '1';
-            }
-            
-            window.addEventListener('scroll', function() {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const windowHeight = window.innerHeight;
-                
-                // Hero fade effect only on scroll
-                const maxScroll = windowHeight * 1.0;
-                const fadeProgress = Math.min(scrollTop / maxScroll, 1);
-                const opacity = 1 - fadeProgress;
-                const translateY = scrollTop * 0.4;
-                
-                if (heroContent) {
-                    heroContent.style.opacity = opacity;
-                    heroContent.style.transform = `translate3d(0px, ${translateY}px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`;
-                }
-                
-                if (heroImage) {
-                    heroImage.style.opacity = opacity;
-                }
-            });
-        });
-    </script>
-    
-
-</body>
-</html> 
+                mobileNa
