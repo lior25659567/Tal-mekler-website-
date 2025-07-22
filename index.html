@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tal Mekler - Official Website</title>
+    <title>freddy piza - Official Website</title>
     <!-- Updated title for automatic deployment test -->
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -447,19 +447,22 @@
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 const windowHeight = window.innerHeight;
                 
-                // Hero fade effect only on scroll
-                const maxScroll = windowHeight * 1.0;
-                const fadeProgress = Math.min(scrollTop / maxScroll, 1);
-                const opacity = 1 - fadeProgress;
-                const translateY = scrollTop * 0.4;
-                
-                if (heroContent) {
-                    heroContent.style.opacity = opacity;
-                    heroContent.style.transform = `translate3d(0px, ${translateY}px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`;
-                }
-                
-                if (heroImage) {
-                    heroImage.style.opacity = opacity;
+                // Only apply fade effect on desktop
+                if (window.innerWidth > 768) {
+                    // Hero fade effect only on scroll
+                    const maxScroll = windowHeight * 1.0;
+                    const fadeProgress = Math.min(scrollTop / maxScroll, 1);
+                    const opacity = 1 - fadeProgress;
+                    const translateY = scrollTop * 0.4;
+                    
+                    if (heroContent) {
+                        heroContent.style.opacity = opacity;
+                        heroContent.style.transform = `translate3d(0px, ${translateY}px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`;
+                    }
+                    
+                    if (heroImage) {
+                        heroImage.style.opacity = opacity;
+                    }
                 }
             });
         });

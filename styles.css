@@ -154,6 +154,16 @@ body {
     .hero-section {
         height: 100vh;
     }
+    
+    /* Disable fade effect on mobile to make it more compact */
+    .hero-content {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    .hero-image {
+        opacity: 1 !important;
+    }
 }
 
 /* Hero Image - sticky positioning keeps it in place */
@@ -1374,169 +1384,4 @@ body {
     }
     
     /* Show mobile music section */
-    .mobile-music-section {
-        display: block !important;
-    }
-    
-    .mobile-music-title {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .mobile-music-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem;
-        padding: 0 0.5rem;
-    }
-    
-    .mobile-music-card {
-        margin-bottom: 1rem;
-    }
-    
-    .div-block-96 {
-        padding-bottom: 60px;
-    }
-    
-    .music-title {
-        font-size: 2.5rem;
-        letter-spacing: 0.05em;
-    }
-    
-
-    
-    /* Mobile button styles */
-    .div-block-97 {
-        text-align: center;
-        margin-top: 2rem;
-    }
-    
-    .button-3 {
-        display: inline-block;
-        padding: 0.8rem 1.5rem;
-        background: #667eea;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 50px;
-        font-weight: 600;
-        font-size: 0.9rem;
-        transition: all 0.3s ease;
-    }
-    
-    .button-3:hover {
-        background: #5a6fd8;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-    }
-    
-    /* About section responsive */
-    .about-section {
-        padding: 2rem 1rem;
-    }
-    
-    .about_component {
-        grid-template-columns: 1fr;
-        grid-row-gap: 2rem;
-        grid-column-gap: 0;
-    }
-    
-    .about_column._1 .margin-xxlarge {
-        margin-bottom: 2rem;
-    }
-    
-    .heading-medium {
-        font-size: 2rem;
-    }
-    
-    .about_social-links-wrapper {
-        justify-content: center;
-    }
-    
-    .about_social-link {
-        width: 40px;
-        height: 40px;
-    }
-    
-    /* Poems section responsive */
-    .poems-header {
-        padding: 2rem 1rem 1rem;
-    }
-    
-    .poems-title {
-        font-size: 2.5rem;
-        letter-spacing: 0.05em;
-    }
-    
-    /* Make poem images much bigger on mobile */
-    .sticky-cards-container {
-        padding: 0 0.5rem;
-        margin: 0;
-    }
-    
-    .sticky-card {
-        margin-bottom: 4rem;
-        width: 100vw;
-        max-width: 100vw;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    .card-content {
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-    
-    .poem-image {
-        width: 100vw;
-        max-width: 100vw;
-        height: auto;
-        object-fit: contain;
-        border-radius: 0;
-        box-shadow: none;
-        transition: transform 0.3s ease;
-        margin: 0;
-        display: block;
-        min-height: 80vh;
-    }
-    
-    .poem-image:hover {
-        transform: scale(1.02);
-    }
-    
-
-    
-    .video-slide {
-        width: 90vw;
-        max-width: none;
-    }
-    
-    .video.w-video.w-embed {
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    }
-    
-    /* Contact section responsive */
-    .contact-section {
-        padding: 4rem 1rem;
-    }
-    
-    .contact-title {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-    }
-    
-    .contact-text {
-        font-size: 1.1rem;
-    }
-    
-    .contact-link {
-        font-size: 1.4rem;
-        padding: 0.8rem 1.5rem;
-    }
-}
-
-@media screen and (max-width: 991px) {
-    .social-wrapper {
-        padding-bottom: 140px;
-    }
-} 
+    .mob
