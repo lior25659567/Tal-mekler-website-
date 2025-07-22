@@ -145,7 +145,7 @@ body {
 
 /* Hero Section - Compact height with alternative fade */
 .hero-section {
-    height: 100vh;
+    height: 150vh;
     position: relative;
     overflow: hidden;
 }
@@ -164,6 +164,11 @@ body {
     
     .hero-image {
         opacity: 1 !important;
+    }
+    
+    /* Position mobile music section closer to hero */
+    .mobile-music-section {
+        top: 80vh;
     }
     
     /* Show mobile menu toggle */
@@ -501,6 +506,11 @@ body {
     display: none; /* Hidden on desktop by default */
     padding: 2rem 1rem;
     background: #f5f3f0;
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    right: 0;
+    z-index: 10;
 }
 
 .mobile-music-title {
