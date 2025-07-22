@@ -480,12 +480,16 @@ body {
 
 /* Music Section Wrapper */
 .music-section-wrapper {
-    min-height: 100vh;
+    min-height: auto;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 2rem 0;
+    padding: 4rem 0;
+    margin: 2rem 0;
+    position: relative;
+    z-index: 1;
 }
 
 /* Music Container */
@@ -993,8 +997,10 @@ body {
     position: relative;
     background: #f5f3f0;
     overflow: hidden;
-    padding: 2rem 0;
-    margin-top: 2rem;
+    padding: 4rem 0;
+    margin-top: 4rem;
+    clear: both;
+    z-index: 2;
 }
 
 .about-title {
