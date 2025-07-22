@@ -510,10 +510,8 @@ body {
     gap: 4rem;
     padding: 2rem 1rem;
     background: #f5f3f0;
-    position: absolute;
-    top: 100vh;
-    left: 0;
-    right: 0;
+    position: relative;
+    margin: 0 auto;
     z-index: 10;
 }
 
@@ -1553,6 +1551,8 @@ body {
         gap: 4rem;
         padding: 2rem 1rem;
         background: #f5f3f0;
+        position: relative;
+        margin: 0 auto;
     }
     
     .mobile-music-title {
