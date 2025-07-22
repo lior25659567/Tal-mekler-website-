@@ -1192,7 +1192,7 @@ body {
 
 /* Spacer divs */
 .spacer-15vh {
-    height: 60vh;
+    height: 30vh;
     width: 100%;
 }
 
@@ -1611,12 +1611,12 @@ body {
     .sticky-cards-container {
         padding: 0;
         margin: 0;
-        height: 300vh; /* 3 poems * 100vh each */
+        height: 400vh; /* 4 poems * 100vh each for more space */
         position: relative;
     }
     
     .sticky-card {
-        height: 100vh;
+        height: 120vh;
         width: 100vw;
         position: sticky;
         top: 0;
@@ -1624,6 +1624,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
     }
     
     .card-content {
@@ -1634,6 +1635,8 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
+        overflow: hidden;
     }
     
     .poem-image {
@@ -1647,6 +1650,13 @@ body {
         display: block;
         max-width: none;
         max-height: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
     }
     
     .poem-image:hover {
