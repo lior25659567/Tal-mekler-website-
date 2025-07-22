@@ -118,34 +118,6 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Social wrapper at bottom of hero -->
-            <div data-w-id="4d2ccefc-c237-69f5-132e-7ff0e8b21276" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="social-wrapper">
-                <a data-w-id="0cfc7f17-4350-e652-cdde-c44a7abf6122" href="#" class="link-social w-inline-block">
-                    <img src="https://cdn.prod.website-files.com/65c639f68821fe3493c0df19/65c6677b2229a32dd13d156b_twitter_icon.svg" loading="lazy" alt="" class="img-social">
-                    <div class="nav-hover-div"></div>
-                </a>
-                <a data-w-id="32caa82b-0cd3-14ca-afcf-bda856aeb9bf" href="#" class="link-social w-inline-block">
-                    <img src="https://cdn.prod.website-files.com/65c639f68821fe3493c0df19/65c6679f077d747b90c12fae_instagram_icon.svg" loading="lazy" alt="" class="img-social">
-                    <div class="nav-hover-div"></div>
-                </a>
-                <a data-w-id="49148d1e-ee37-f46b-d1f9-bee380ae4b2b" href="#" class="link-social w-inline-block">
-                    <img src="https://cdn.prod.website-files.com/65c639f68821fe3493c0df19/65c6675044930d0d61b9eba4_facebook_icon.svg" loading="lazy" alt="" class="img-social">
-                    <div class="nav-hover-div"></div>
-                </a>
-                <a data-w-id="fc5e8bce-8c7d-c416-f633-433540a861c6" href="#" class="link-social w-inline-block">
-                    <img src="https://cdn.prod.website-files.com/65c639f68821fe3493c0df19/65c6677fddd641520764af61_spotify_icon.svg" loading="lazy" alt="" class="img-social">
-                    <div class="nav-hover-div"></div>
-                </a>
-                <a data-w-id="e2ed287e-c2be-ad41-143e-ca66ee3cf1d4" href="#" class="link-social w-inline-block">
-                    <img src="https://cdn.prod.website-files.com/65c639f68821fe3493c0df19/65c6677bf9d5255453602b91_itunes_icon.svg" loading="lazy" alt="" class="img-social">
-                    <div class="nav-hover-div"></div>
-                </a>
-                <a data-w-id="ea72aa91-daaf-f5da-65b2-86f1c0eea449" href="#" class="link-social w-inline-block">
-                    <img src="https://cdn.prod.website-files.com/65c639f68821fe3493c0df19/65cc7f2409715875dcc1045e_youtube_icon.svg" loading="lazy" alt="" class="img-social">
-                    <div class="nav-hover-div"></div>
-                </a>
-            </div>
         </div>
     </div>
 
@@ -443,4 +415,56 @@
                 });
                 
                 // Close menu when clicking on a link
-                mobileNa
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenuToggle.classList.remove('active');
+                        mobileMenuOverlay.classList.remove('active');
+                    });
+                });
+                
+                // Close menu when clicking outside
+                mobileMenuOverlay.addEventListener('click', function(e) {
+                    if (e.target === mobileMenuOverlay) {
+                        mobileMenuToggle.classList.remove('active');
+                        mobileMenuOverlay.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Sticky cards are handled by CSS only - no JavaScript needed
+            
+            // Set initial state - no fade on page load
+            if (heroContent) {
+                heroContent.style.opacity = '1';
+                heroContent.style.transform = 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)';
+            }
+            
+            if (heroImage) {
+                heroImage.style.opacity = '1';
+            }
+            
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const windowHeight = window.innerHeight;
+                
+                // Hero fade effect only on scroll
+                const maxScroll = windowHeight * 1.0;
+                const fadeProgress = Math.min(scrollTop / maxScroll, 1);
+                const opacity = 1 - fadeProgress;
+                const translateY = scrollTop * 0.4;
+                
+                if (heroContent) {
+                    heroContent.style.opacity = opacity;
+                    heroContent.style.transform = `translate3d(0px, ${translateY}px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`;
+                }
+                
+                if (heroImage) {
+                    heroImage.style.opacity = opacity;
+                }
+            });
+        });
+    </script>
+    
+
+</body>
+</html> 
