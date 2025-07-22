@@ -994,6 +994,17 @@ body {
     overflow: hidden;
 }
 
+.about-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ff6b35;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 3rem;
+    font-family: 'Inter', sans-serif;
+}
+
 /* Image Carousel Section */
 .about-carousel {
     height: 60vh;
