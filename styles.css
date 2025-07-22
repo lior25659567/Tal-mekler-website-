@@ -164,6 +164,22 @@ body {
     .hero-image {
         opacity: 1 !important;
     }
+    
+    /* Show mobile menu toggle */
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    /* Hide desktop navigation on mobile */
+    .hero-navigation {
+        display: none;
+    }
+    
+    /* Mobile menu styles */
+    .mobile-nav-link {
+        font-size: 1.5rem;
+        padding: 0.8rem 1.5rem;
+    }
 }
 
 /* Hero Image - sticky positioning keeps it in place */
@@ -1400,4 +1416,274 @@ body {
     margin: 0;
     max-width: 600px;
     font-family: 'Times New Roman', Times, serif;
-    font-weight: 
+    font-weight: 400;
+}
+
+.contact-link {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 1rem 2rem;
+    border-radius: 0;
+    background: #fff;
+    border: 1px solid #e8e4e0;
+    display: inline-block;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 0.05em;
+}
+
+.contact-link:hover {
+    color: #000;
+    background: #f8f8f8;
+    border-color: #d4d0cc;
+    transform: translateY(-1px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    /* Hide sticky nav on mobile, show mobile menu instead */
+    .sticky-nav {
+        display: none;
+    }
+    
+    .hero-logo {
+        width: 350px;
+        max-width: 90vw;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-content {
+        padding: 1rem;
+    }
+    
+    /* Hide desktop navigation on mobile */
+    .hero-navigation {
+        display: none;
+    }
+    
+    /* Show mobile menu toggle */
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    /* Mobile menu styles */
+    .mobile-nav-link {
+        font-size: 1.5rem;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    /* Social Wrapper Mobile */
+    .social-wrapper {
+        padding-bottom: 140px;
+        gap: 6px;
+    }
+    
+    .link-social {
+        width: 32px;
+        height: 32px;
+        padding: 6px;
+        border: 1px solid #fff;
+    }
+    
+    .img-social {
+        width: 16px;
+        height: 16px;
+    }
+    
+    /* Hide desktop music container AND wrapper on mobile */
+    .music-container {
+        display: none !important;
+    }
+    
+    .music-section-wrapper {
+        display: none !important;
+    }
+    
+    /* Show mobile music section */
+    .mobile-music-section {
+        display: block !important;
+    }
+    
+    /* Ensure mobile music section is visible */
+    .mobile-music-section {
+        padding: 2rem 1rem;
+        background: #f5f3f0;
+    }
+    
+    .mobile-music-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .mobile-music-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+        padding: 0 0.5rem;
+    }
+    
+    /* Show only first 4 music cards on mobile */
+    .mobile-music-card:nth-child(n+5) {
+        display: none;
+    }
+    
+    .mobile-music-card {
+        margin-bottom: 1rem;
+    }
+    
+    .div-block-96 {
+        padding-bottom: 60px;
+    }
+    
+    .music-title {
+        font-size: 2.5rem;
+        letter-spacing: 0.05em;
+    }
+    
+
+    
+    /* Mobile button styles */
+    .div-block-97 {
+        text-align: center;
+        margin-top: 2rem;
+    }
+    
+    .button-3 {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        background: #667eea;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+    
+    .button-3:hover {
+        background: #5a6fd8;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    }
+    
+    /* About section responsive */
+    .about-section {
+        padding: 2rem 1rem;
+    }
+    
+    .about_component {
+        grid-template-columns: 1fr;
+        grid-row-gap: 2rem;
+        grid-column-gap: 0;
+    }
+    
+    .about_column._1 .margin-xxlarge {
+        margin-bottom: 2rem;
+    }
+    
+    .heading-medium {
+        font-size: 2rem;
+    }
+    
+    .about_social-links-wrapper {
+        justify-content: center;
+    }
+    
+    .about_social-link {
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* Poems section responsive */
+    .poems-header {
+        padding: 2rem 1rem 1rem;
+    }
+    
+    .poems-title {
+        font-size: 2.5rem;
+        letter-spacing: 0.05em;
+    }
+    
+    /* Make poem images much bigger on mobile */
+    .sticky-cards-container {
+        padding: 0;
+        margin: 0;
+        height: 300vh; /* 3 poems * 100vh each */
+        position: relative;
+    }
+    
+    .sticky-card {
+        height: 100vh;
+        width: 100vw;
+        position: sticky;
+        top: 0;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .card-content {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .poem-image {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        border-radius: 0;
+        box-shadow: none;
+        transition: transform 0.3s ease;
+        margin: 0;
+        display: block;
+        max-width: none;
+        max-height: none;
+    }
+    
+    .poem-image:hover {
+        transform: scale(1.02);
+    }
+    
+
+    
+    .video-slide {
+        width: 90vw;
+        max-width: none;
+    }
+    
+    .video.w-video.w-embed {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Contact section responsive */
+    .contact-section {
+        padding: 4rem 1rem;
+    }
+    
+    .contact-title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .contact-text {
+        font-size: 1.1rem;
+    }
+    
+    .contact-link {
+        font-size: 1.4rem;
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .social-wrapper {
+        padding-bottom: 140px;
+    }
+} 
