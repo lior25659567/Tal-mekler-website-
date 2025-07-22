@@ -532,16 +532,15 @@ body {
 }
 
 .mobile-about-title {
-    width: 35.5rem;
-    height: 2.4375rem;
-    font-family: 'Corben', serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 2rem;
-    line-height: 2.4rem;
-    letter-spacing: 0.2rem;
-    text-transform: uppercase;
+    width: 21.75rem;
     color: #FF3B00;
+    font-family: 'Corben', serif;
+    font-size: 5.33763rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 6.40513rem; /* 120% */
+    letter-spacing: 0.53375rem;
+    text-transform: uppercase;
     text-align: center;
     margin: 0;
 }
@@ -1412,17 +1411,14 @@ body {
 }
 
 .poems-title {
-    width: 21.75rem;
-    color: #FF3B00;
-    font-family: 'Corben', serif;
-    font-size: 5.33763rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 6.40513rem; /* 120% */
-    letter-spacing: 0.53375rem;
-    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 500;
+    color: #1a1a1a;
     text-align: center;
     margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 /* Sticky Cards Container */
@@ -1773,16 +1769,8 @@ body {
     }
     
     .poems-title {
-        width: 21.75rem;
-        color: #FF3B00;
-        font-family: 'Corben', serif;
-        font-size: 5.33763rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 6.40513rem; /* 120% */
-        letter-spacing: 0.53375rem;
-        text-transform: uppercase;
-        text-align: center;
+        font-size: 2.5rem;
+        letter-spacing: 0.05em;
     }
     
     /* Make poem images much bigger on mobile */
