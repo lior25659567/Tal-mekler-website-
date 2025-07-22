@@ -1060,11 +1060,11 @@ body {
 /* Mobile: Reduce gaps between sections */
 @media (max-width: 768px) {
     .spacer-15vh {
-        height: 5vh;
+        height: 2vh;
     }
     
     .spacer-30vh {
-        height: 10vh;
+        height: 5vh;
     }
 }
 
