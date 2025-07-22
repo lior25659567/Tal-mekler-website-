@@ -149,6 +149,13 @@ body {
     position: relative;
 }
 
+/* Mobile: Reduce hero section height */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 100vh;
+    }
+}
+
 /* Hero Image - sticky positioning keeps it in place */
 .hero-image {
     height: 100vh;
@@ -168,6 +175,13 @@ body {
     will-change: auto;
     transform: translateZ(0);
     backface-visibility: hidden;
+}
+
+/* Mobile: Make hero image smaller */
+@media (max-width: 768px) {
+    .hero-image {
+        height: 80vh;
+    }
 }
 
 .hero-image::before {
