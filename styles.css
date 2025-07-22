@@ -937,7 +937,7 @@ body {
     letter-spacing: 0.1em;
     margin: 0 0 3rem 0;
     line-height: 1.2;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .about-content {
@@ -950,7 +950,7 @@ body {
     margin: 0 0 2rem 0;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .about-paragraphs {
@@ -963,7 +963,7 @@ body {
     font-size: 1.1rem;
     line-height: 1.7;
     margin: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: 400;
 }
 
