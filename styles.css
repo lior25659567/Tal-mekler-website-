@@ -480,11 +480,12 @@ body {
 
 /* Music Section Wrapper */
 .music-section-wrapper {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding: 2rem 0;
 }
 
 /* Music Container */
@@ -992,6 +993,8 @@ body {
     position: relative;
     background: #f5f3f0;
     overflow: hidden;
+    padding: 2rem 0;
+    margin-top: 2rem;
 }
 
 .about-title {
@@ -1408,6 +1411,7 @@ body {
 .poems-section {
     position: relative;
     background: #f5f3f0;
+    margin-bottom: 2rem;
 }
 
 .poems-header {
