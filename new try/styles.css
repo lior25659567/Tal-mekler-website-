@@ -8,6 +8,7 @@
 html {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -148,7 +149,6 @@ body {
 .social-icon:hover img {
     transform: scale(1.1);
 }
-
 
 /* Hero Section - Compact height with alternative fade */
 .hero-section {
@@ -1413,7 +1413,7 @@ body {
     padding-top: 0;
 }
 
-/* Poems Section */
+/* FIXED POEMS SECTION */
 .poems-section {
     position: relative;
     background: #f5f3f0;
@@ -1444,53 +1444,60 @@ body {
     margin: 0;
 }
 
-/* Sticky Cards Container */
+/* FIXED: Sticky Cards Container */
 .sticky-cards-container {
     position: relative;
-    height: 300vh; /* Ensure enough space for all 3 poem cards */
+    /* Height = number of cards × 100vh to ensure proper scroll space */
+    height: 100vh; /* 3 cards × 100vh each */
 }
 
-/* Individual Sticky Card */
+/* FIXED: Individual Sticky Card */
 .sticky-card {
-    height: 100vh;
+    height: 50vh;
+    width: 100%;
     position: sticky;
     top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0; /* Remove margin to ensure proper stacking */
+    /* Remove margin-bottom to prevent gaps */
+    margin-bottom: 0;
+    /* Add subtle background transitions for visual feedback */
+    transition: all 0.3s ease;
+    /* Performance optimization */
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
+/* Optional: Different background colors for visual distinction */
 .sticky-card:nth-child(1) {
-    background: transparent;
+    background: rgba(255, 59, 0, 0.05);
 }
 
 .sticky-card:nth-child(2) {
-    background: transparent;
+    background: rgba(255, 59, 0, 0.08);
 }
 
 .sticky-card:nth-child(3) {
-    background: transparent;
+    background: rgba(255, 59, 0, 0.11);
 }
 
-.sticky-card:nth-child(4) {
-    background: transparent;
-}
-
-/* Card Content */
+/* FIXED: Card Content */
 .card-content {
     background: transparent;
-    padding: 24px;
+    padding: 2rem;
     border-radius: 0;
     text-align: center;
-    max-width: 1000px;
-    width: 95vw;
-    margin: 0 1rem;
-    min-height: 700px;
+    max-width: 900px;
+    width: 90vw;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: none;
+    align-items: center;
+    /* Ensure content doesn't overflow */
+    box-sizing: border-box;
 }
 
 .card-content h3 {
@@ -1512,19 +1519,96 @@ body {
     font-weight: 400;
 }
 
-/* Poem Images */
+/* FIXED: Poem Images */
 .poem-image {
-    max-width: 150%;
+    max-width: 100%;
+    width: 100%;
     height: auto;
-    object-fit: cover;
-    border-radius: 0;
-    box-shadow: none;
-    transition: transform 0.3s ease;
-    margin: 0 -25%;
+    max-height: 70vh; /* Prevent images from being too tall */
+    object-fit: contain; /* Changed from cover to contain */
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Center the image */
+    display: block;
+    margin: 0 auto;
+    /* Performance optimization */
+    will-change: transform;
+    /* Accessibility */
+    outline: none;
 }
 
 .poem-image:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.poem-image:focus {
+    outline: 2px solid #FF3B00;
+    outline-offset: 4px;
+}
+
+/* MOBILE RESPONSIVE FIXES FOR POEMS */
+@media (max-width: 768px) {
+    .poems-title {
+        font-size: 2.5rem;
+        letter-spacing: 0.2rem;
+        width: auto;
+        max-width: 90vw;
+    }
+
+    .poems-header {
+        padding: 2rem 1rem 1rem;
+    }
+
+    /* Mobile sticky cards adjustments */
+    .sticky-cards-container {
+        height: 300vh; /* Keep same height for mobile */
+    }
+
+    .sticky-card {
+        height: 100vh;
+        padding: 1rem;
+    }
+
+    .card-content {
+        width: 95vw;
+        padding: 1rem;
+        max-width: none;
+    }
+
+    .poem-image {
+        max-height: 80vh; /* Allow slightly taller on mobile */
+        border-radius: 4px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* TABLET RESPONSIVE FOR POEMS */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .poems-title {
+        font-size: 3.5rem;
+    }
+
+    .card-content {
+        max-width: 800px;
+        width: 85vw;
+    }
+
+    .poem-image {
+        max-height: 75vh;
+    }
+}
+
+/* LARGE SCREEN OPTIMIZATION FOR POEMS */
+@media (min-width: 1200px) {
+    .card-content {
+        max-width: 1000px;
+    }
+
+    .poem-image {
+        max-height: 65vh;
+    }
 }
 
 /* Contact Section */
@@ -1720,8 +1804,6 @@ body {
         letter-spacing: 0.05em;
     }
     
-
-    
     /* Mobile button styles */
     .div-block-97 {
         text-align: center;
@@ -1774,80 +1856,6 @@ body {
         height: 40px;
     }
     
-    /* Poems section responsive */
-    .poems-header {
-        padding: 2rem 1rem 1rem;
-    }
-    
-    .poems-title {
-        width: 21.75rem;
-        color: #FF3B00;
-        font-family: 'Corben', serif;
-        font-size: 5.33763rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 6.40513rem; /* 120% */
-        letter-spacing: 0.53375rem;
-        text-transform: uppercase;
-        text-align: center;
-    }
-    
-    /* Make poem images much bigger on mobile */
-    .sticky-cards-container {
-        padding: 0;
-        margin: 0;
-        height: 400vh; /* 4 poems * 100vh each for more space */
-        position: relative;
-    }
-    
-    .sticky-card {
-        height: 120vh;
-        width: 100vw;
-        position: sticky;
-        top: 0;
-        margin-bottom: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-    }
-    
-    .card-content {
-        width: 100%;
-        height: 100%;
-        padding: 24px;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .poem-image {
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
-        border-radius: 0;
-        box-shadow: none;
-        transition: transform 0.3s ease;
-        margin: 0;
-        display: block;
-        max-width: none;
-        max-height: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
-    
-    .poem-image:hover {
-        transform: scale(1.02);
-    }
-    
-
-    
     .video-slide {
         width: 90vw;
         max-width: none;
@@ -1891,7 +1899,3 @@ body {
         padding-bottom: 140px;
     }
 }
-
-
-
-@media screen and (max-width: 991px) { }

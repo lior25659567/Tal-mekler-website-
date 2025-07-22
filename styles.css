@@ -155,7 +155,7 @@ body {
 
 /* Hero Section - Compact height with alternative fade */
 .hero-section {
-    height: 150vh;
+    height: 60vh;
     position: relative;
     overflow: hidden;
 }
@@ -163,7 +163,7 @@ body {
 /* Mobile: Keep compact height */
 @media (max-width: 768px) {
     .hero-section {
-        height: 100vh;
+        height: 50vh;
     }
     
     /* Disable fade effect on mobile to make it more compact */
@@ -201,7 +201,7 @@ body {
 
 /* Hero Image - sticky positioning keeps it in place */
 .hero-image {
-    height: 100vh;
+    height: 60vh;
     position: sticky;
     top: 0;
     background-image: url("./hero image/hero.svg");
@@ -223,7 +223,7 @@ body {
 /* Mobile: Make hero image smaller */
 @media (max-width: 768px) {
     .hero-image {
-        height: 80vh;
+        height: 50vh;
     }
 }
 
@@ -654,6 +654,14 @@ body {
     text-transform: uppercase;
     color: #1a1a1a;
     margin: 1rem 0 0.5rem 0;
+}
+
+.mobile-about-subtitle.singer {
+    text-align: left;
+}
+
+.mobile-about-subtitle.songwriter {
+    text-align: right;
 }
 
 .mobile-about-text p {
@@ -1609,6 +1617,13 @@ body {
     width: 100%;
 }
 
+/* Lior Spacer Div */
+.lior-spacer {
+    height: 20vh;
+    width: 100%;
+    display: block;
+}
+
 /* Mobile: Reduce gaps between sections */
 @media (max-width: 768px) {
     .spacer-15vh {
@@ -1677,19 +1692,17 @@ body {
     padding-top: 0;
 }
 
-/* New Poems Section Implementation */
+/* Poems Section - Optimized Sticky Scroll */
 .poems-section-new {
     position: relative;
-    height: 400vh; /* 4x viewport height for smooth scroll */
-    z-index: 1;
-    padding: 0;
     background: #f5f3f0;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    will-change: transform;
 }
 
 .poems-header-new {
-    position: sticky;
-    top: 0;
-    z-index: 10;
     padding: 4rem 0 2rem;
     text-align: center;
     background: #f5f3f0;
@@ -1697,47 +1710,171 @@ body {
 }
 
 .poems-title-new {
-    font-size: 3rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-family: 'Times New Roman', Times, serif;
-    margin: 0;
-    color: #1a1a1a;
-}
-
-.sticky-cards-container-new {
-    height: 100vh;
     width: 100%;
-    position: sticky;
-    top: 0;
-    overflow: hidden;
+    max-width: 100%;
+    color: #FF3B00;
+    font-family: 'Corben', serif;
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 3rem 0;
+    display: block;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
+/* Container - Simple stacked layout */
+.sticky-cards-container-new {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    gap: 40px;
+    margin: 50px auto;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Cards - Simple layout without backgrounds */
 .sticky-card-new {
-    position: absolute;
-    top: 0;
-    left: 0;
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+    background: transparent;
+    min-height: 150px;
+    border-radius: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'system-ui', sans-serif;
+    color: #1a1a1a;
+    transition: transform 0.3s ease;
+}
+
+/* Remove all sticky positioning */
+.sticky-card-new:nth-child(1) {
+    background: transparent;
+}
+
+.sticky-card-new:nth-child(2) {
+    background: transparent;
+}
+
+.sticky-card-new:nth-child(3) {
+    background: transparent;
+}
+
+/* Simple hover effect */
+.sticky-card-new:hover {
+    transform: scale(1.02);
+}
+
+/* Card content styling */
+.card-content {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    will-change: transform;
-    transition: transform 0.3s ease-out;
 }
 
-/* Initial positions - stack cards on top of each other */
-.sticky-card-new:nth-child(1) {
-    z-index: 3;
+/* Poem image styling */
+.poem-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    margin: 0;
+    display: block;
 }
 
-.sticky-card-new:nth-child(2) {
-    z-index: 2;
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .poems-title-new {
+        font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
+        line-height: 1.1 !important;
+        letter-spacing: 0.1rem !important;
+        padding: 0 0.5rem !important;
+    }
+    
+    /* Mobile container - simple stacked layout */
+    .sticky-cards-container-new {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        gap: 30px;
+        margin: 30px auto;
+        align-items: center;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+    
+    .sticky-card-new {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        background: transparent;
+        min-height: 120px;
+        border-radius: 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'system-ui', sans-serif;
+        color: #1a1a1a;
+        transition: transform 0.3s ease;
+    }
+    
+    /* Remove all sticky positioning for mobile */
+    .sticky-card-new:nth-child(1) {
+        background: transparent;
+    }
+    
+    .sticky-card-new:nth-child(2) {
+        background: transparent;
+    }
+    
+    .sticky-card-new:nth-child(3) {
+        background: transparent;
+    }
+    
+    /* Simple mobile hover effect */
+    .sticky-card-new:hover {
+        transform: scale(1.01);
+    }
+    
+    .poem-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0;
+        margin: 0;
+        display: block;
+    }
 }
 
-.sticky-card-new:nth-child(3) {
-    z-index: 1;
+/* Tablet responsive */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .sticky-cards-container-new {
+        max-width: 400px;
+    }
+    
+    .poem-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0;
+        margin: 0;
+        display: block;
+    }
 }
 
 /* Contact Section */
@@ -1788,7 +1925,7 @@ body {
     color: rgba(26, 26, 26, 0.6);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Corben';
     margin-bottom: 0.5rem;
 }
 
@@ -1803,7 +1940,7 @@ body {
     background: transparent;
     border: 1px solid rgba(26, 26, 26, 0.2);
     display: inline-block;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Tilana';
     letter-spacing: 0.05em;
     min-width: 200px;
 }
@@ -2033,70 +2170,20 @@ body {
         height: 40px;
     }
     
-    /* Poems section responsive */
-    .poems-header {
-        padding: 2rem 1rem 1rem;
+    /* Poems section responsive - now handled by .poems-header-new and .poems-title-new */
+    
+    /* Mobile poems section - simple layout */
+    .sticky-cards-container-new {
+        max-width: 100%;
     }
     
-    .poems-title {
-        color: #FF3B00;
-        font-family: 'Corben', serif;
-        font-size: clamp(2rem, 8vw, 3.5rem);
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1.2;
-        letter-spacing: 0.2rem;
-        text-transform: uppercase;
-        text-align: center;
-        margin: 0 0 2rem 0;
-        padding: 0 1rem;
-        box-sizing: border-box;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
+    .sticky-card-new {
+        width: 90%;
+        min-height: 300px;
+        margin: 0 auto;
     }
     
-    /* Ensure sticky scroll works on mobile */
-    .sticky-cards-container {
-        padding: 0;
-        margin: 0;
-        height: 300vh; /* 3 poems * 100vh each for proper sticky behavior */
-        position: relative;
-        overflow: visible; /* Important: Don't hide overflow for sticky positioning */
-        z-index: 1;
-    }
-    
-    .sticky-card {
-        height: 100vh;
-        width: 100%;
-        max-width: 100vw;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        margin-bottom: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        box-sizing: border-box;
-        will-change: transform;
-        z-index: inherit;
-        transform: translateY(0);
-        transition: transform 0.3s ease;
-    }
-    
-    /* Create proper staggered sticky effect for mobile */
-    .sticky-card:nth-child(1) {
-        z-index: 3;
-    }
-    
-    .sticky-card:nth-child(2) {
-        z-index: 2;
-    }
-    
-    .sticky-card:nth-child(3) {
-        z-index: 1;
-    }
+    /* Mobile card layout - simple stacking */
     
     .card-content {
         width: 100%;
@@ -2157,6 +2244,7 @@ body {
     
     .contact-label {
         font-size: 0.8rem;
+        font-family: 'Corben';
     }
     
     .contact-link {
