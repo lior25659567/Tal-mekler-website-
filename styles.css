@@ -155,7 +155,7 @@ body {
 
 /* Hero Section - Compact height with alternative fade */
 .hero-section {
-    height: 60vh;
+    height: 80vh !important;
     position: relative;
     overflow: hidden;
 }
@@ -163,17 +163,17 @@ body {
 /* Mobile: Keep compact height */
 @media (max-width: 768px) {
     .hero-section {
-        height: 50vh;
+        height: 70vh !important;
     }
     
-    /* Disable fade effect on mobile to make it more compact */
+    /* Allow fade effect on mobile */
     .hero-content {
-        opacity: 1 !important;
-        transform: none !important;
+        opacity: 1;
+        transform: none;
     }
     
     .hero-image {
-        opacity: 1 !important;
+        opacity: 1;
     }
     
     /* Position mobile music section in normal document flow */
@@ -201,7 +201,7 @@ body {
 
 /* Hero Image - sticky positioning keeps it in place */
 .hero-image {
-    height: 60vh;
+    height: 80vh !important;
     position: sticky;
     top: 0;
     background-image: url("./hero image/hero.svg");
@@ -223,7 +223,7 @@ body {
 /* Mobile: Make hero image smaller */
 @media (max-width: 768px) {
     .hero-image {
-        height: 50vh;
+        height: 70vh !important;
     }
 }
 
@@ -343,6 +343,48 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border-color: #fff;
     transform: translateY(-2px);
+}
+
+/* Mobile Social Media Icons */
+.mobile-social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+}
+
+.mobile-social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.mobile-social-icon:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+.mobile-social-icon img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    transition: all 0.3s ease;
+}
+
+.mobile-social-icon:hover img {
+    transform: scale(1.1);
 }
 
 /* Hamburger Animation */
@@ -607,7 +649,10 @@ body {
 .mobile-carousel-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+    max-height: 100%;
+    max-width: 100%;
     border-radius: 8px;
 }
 
@@ -1162,8 +1207,10 @@ body {
 .carousel-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 /* Carousel Dots */
@@ -1804,56 +1851,66 @@ body {
         padding: 0 0.5rem !important;
     }
     
-    /* Mobile container - simple stacked layout */
+    .poems-section-new {
+        position: relative;
+        padding-bottom: 2rem;
+    }
+    
+    /* Mobile container - simple vertical layout */
     .sticky-cards-container-new {
         display: flex;
         flex-direction: column;
-        max-width: 100%;
-        gap: 30px;
-        margin: 30px auto;
-        align-items: center;
-        padding: 0 15px;
-        box-sizing: border-box;
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 0 20px;
+        gap: 2rem;
     }
     
     .sticky-card-new {
-        width: 100%;
-        max-width: 700px;
-        margin: 0 auto;
-        box-sizing: border-box;
-        background: transparent;
-        min-height: 120px;
-        border-radius: 0;
         position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 300px;
+        border-radius: 0;
+        overflow: hidden;
+        background: transparent;
+        box-shadow: none;
+        margin-bottom: 0;
+    }
+    
+    /* Remove all sticky positioning and z-index */
+    .sticky-card-new:nth-child(1),
+    .sticky-card-new:nth-child(2),
+    .sticky-card-new:nth-child(3),
+    .sticky-card-new:nth-child(4) {
+        position: relative;
+        top: auto;
+        z-index: auto;
+    }
+    
+    /* Simple hover effect */
+    .sticky-card-new:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    /* Card content adjustments for mobile */
+    .card-content {
+        width: 100%;
+        height: 100%;
+        padding: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: 'system-ui', sans-serif;
-        color: #1a1a1a;
-        transition: transform 0.3s ease;
-    }
-    
-    /* Remove all sticky positioning for mobile */
-    .sticky-card-new:nth-child(1) {
-        background: transparent;
-    }
-    
-    .sticky-card-new:nth-child(2) {
-        background: transparent;
-    }
-    
-    .sticky-card-new:nth-child(3) {
-        background: transparent;
-    }
-    
-    /* Simple mobile hover effect */
-    .sticky-card-new:hover {
-        transform: scale(1.01);
+        overflow: hidden;
+        box-sizing: border-box;
+        border-radius: 0;
     }
     
     .poem-image {
         width: 100%;
-        height: 100%;
+        height: auto;
         object-fit: cover;
         border-radius: 0;
         margin: 0;
@@ -1940,7 +1997,7 @@ body {
     background: transparent;
     border: 1px solid rgba(26, 26, 26, 0.2);
     display: inline-block;
-    font-family: 'Tilana';
+    font-family: 'Tillana', cursive;
     letter-spacing: 0.05em;
     min-width: 200px;
 }
@@ -2172,16 +2229,7 @@ body {
     
     /* Poems section responsive - now handled by .poems-header-new and .poems-title-new */
     
-    /* Mobile poems section - simple layout */
-    .sticky-cards-container-new {
-        max-width: 100%;
-    }
-    
-    .sticky-card-new {
-        width: 90%;
-        min-height: 300px;
-        margin: 0 auto;
-    }
+    /* Mobile poems section styles already defined above */
     
     /* Mobile card layout - simple stacking */
     
@@ -2232,6 +2280,7 @@ body {
     .contact-title {
         font-size: 2rem;
         margin-bottom: 3rem;
+        font-family: 'Corben', serif;
     }
     
     .contact-info {
@@ -2251,6 +2300,7 @@ body {
         font-size: 1.1rem;
         padding: 0.7rem 1.2rem;
         min-width: 180px;
+        font-family: 'Tillana', cursive;
     }
 }
 
